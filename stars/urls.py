@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
 
+
 urlpatterns = [
    path('', views.index, name='star_index'),  # Главная страница
    path('person/<slug:slug>/', views.star_detail, name='star_detail'), # Детальная страница по slug

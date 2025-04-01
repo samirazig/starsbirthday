@@ -4,7 +4,25 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponseNotFound
 from datetime import date, timedelta
 from .models import Star, Country, Category
-from .forms import StarForm
+from .forms import StarForm, SignUpForm
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login
+
+def signup(request):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            # Сохраняем телефон в профиль
+            profile = user.profile
+            profile.phone = form.cleaned_data['phone']
+            profile.save()
+            login(request, user)
+            return redirect('home')
+    else:
+        form = SignUpForm()
+    return render(request, 'users/signup.html', {'form': form})
+
 
 def index(request):
     """
