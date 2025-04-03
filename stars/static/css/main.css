@@ -1,0 +1,91 @@
+/* Обновлённые стили для страницы "О проекте" */
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 20px rgba(0,0,0,0.05);
+    text-align: center; /* Центрируем весь текст */
+}
+
+.about-content {
+    margin-bottom: 40px;
+    line-height: 1.7;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.stats-section {
+    margin: 50px 0;
+    padding: 30px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.stats-section h2 {
+    margin-bottom: 30px;
+    color: var(--primary-color);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-items: center; /* Центрируем карточки */
+}
+
+.stat-card {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 220px;
+}
+
+.stat-icon {
+    font-size: 3.5rem; /* Увеличиваем размер эмодзи */
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.stat-value {
+    font-size: 2.5rem; /* Увеличиваем цифры */
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.stat-title {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.about-footer {
+    margin-top: 30px;
+    font-style: italic;
+    color: #777;
+}
+
+/* Адаптивные стили */
+@media (max-width: 600px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-card {
+        max-width: 100%;
+    }
+
+    .stat-icon {
+        font-size: 3rem;
+    }
+
+    .stat-value {
+        font-size: 2.2rem;
+    }
+}
